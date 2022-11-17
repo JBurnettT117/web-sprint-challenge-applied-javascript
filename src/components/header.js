@@ -33,7 +33,7 @@ const Header = (title, date, temp) => {
 
 const headerAppender = (selector) => {
   
-  document.querySelector(selector).appendChild(Header("i", "H", "!"));
+  document.querySelector(selector).appendChild(Header("Bloom News", "11/17/2022", "36* F"));
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
