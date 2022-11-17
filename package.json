@@ -29,6 +29,7 @@
     "webpack-dev-server": "4.7.4"
   },
   "dependencies": {
+    "axiom": "^0.1.6",
     "axios": "0.26.0",
     "cors": "2.8.5",
     "express": "4.17.3"
@@ -37,7 +38,7 @@
     "type": "git",
     "url": "git+https://github.com/BloomInstituteOfTechnology/web-sprint-challenge-applied-javascript.git"
   },
-  "jest":{
+  "jest": {
     "testEnvironment": "jsdom"
   }
 }
