@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const Card = (article) => {
   console.log(article)
   const card = document.createElement("div");
@@ -26,7 +28,9 @@ const Card = (article) => {
 
   card.addEventListener("click", () => {
     console.log(article.headline);
-  })
+  });
+
+  return card;
   
   // TASK 5
   // ---------------------
@@ -49,6 +53,29 @@ const Card = (article) => {
 }
 
 const cardAppender = (selector) => {
+  axios.get("http://localhost:5001/api/articles")
+  .then(result => {
+    result.data.articles.javascript.forEach(element => {
+      document.querySelector(`${selector}`).appendChild(Card(element));
+    });
+    result.data.articles.bootstrap.forEach(element => {
+      document.querySelector(`${selector}`).appendChild(Card(element));
+    });
+    result.data.articles.technology.forEach(element => {
+      document.querySelector(`${selector}`).appendChild(Card(element));
+    });
+    result.data.articles.jquery.forEach(element => {
+      document.querySelector(`${selector}`).appendChild(Card(element));
+    });
+    result.data.articles.node.forEach(element => {
+      document.querySelector(`${selector}`).appendChild(Card(element));
+    });
+  })
+  .catch(err => {
+    console.error(err);
+  })
+  .finally(() => console.log("loading complete"));
+
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
